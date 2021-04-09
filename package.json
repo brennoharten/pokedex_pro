@@ -1,0 +1,24 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brennoharten/pokedex_pro.git"
+  },
+  "author": "brenno harten",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brennoharten/pokedex_pro/issues"
+  },
+  "homepage": "https://github.com/brennoharten/pokedex_pro#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0"
+  }
+}
