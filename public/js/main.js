@@ -57,22 +57,44 @@ function fillTable(data) {
     nextURL = data.next
     previousURL = data.previous
 
+    // getTodos(data)
 
+
+// async function getTodos(data) {
+
+//     for (const [idx, element] of data.results.entries()) {
+//         const todo = await fetch(element.url)
+//         // console.log(`Received Todo ${idx+1}:`, todo.id);
+        
+//         const newDATA = await fetch(todo.url)
+//         console.log(`Received Todo ${idx+1}:`, newDATA.id);
+//     }
+//     console.log('finished')
+// }
     
-
     data.results.forEach(function(element, index, array) {
         fetch(element.url)
         .then(function(result) {
             return result.json()
         })
-        .then(function(data){
+        .then(async function(data){
             
             let pokemonInfo = {id:data.id, name:data.name, weight:data.weight}
-            pokemonList[data.id-1] = pokemonInfo   
-            console.log(pokemonList[data.id-1])    
+            pokemonList[data.id-1] = pokemonInfo     
+            insertNewRow(data)
         }) 
+        
+
     })
 }
+
+console.log("qualquer cois")
+
+// for (var i = 0; i < 20; i++) {
+//     console.log(i)
+//     insertNewRow(pokemonList[i])
+// }
+
 
 
 function insertNewRow(data) {
@@ -106,5 +128,4 @@ function insertNewRow(data) {
 getPokemonList("https://pokeapi.co/api/v2/pokemon").then(function(data){
     clearTable()
     fillTable(data)
-    console.log(pokemonList[2])
 })
