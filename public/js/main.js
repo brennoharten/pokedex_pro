@@ -3,6 +3,7 @@ let tbody = table.getElementsByTagName('tbody')[0];
 let navPrevious = document.getElementById('nav-previous')
 let navNext = document.getElementById('nav-next')
 
+
 let nextURL = ''
 let previousURL = ''
 let pokemonList = []
@@ -119,8 +120,9 @@ function insertNewRow(data) {
     detailButton.classList.add("btn-dark")
     detailButton.innerHTML = "Detalhes"
     detailButton.addEventListener("click", function(event){
-        window.open(`file:///home/brennoharten/Estudo/pokedex/new.html?id=${data.id}`, "_self")
-        //window.open("http://localhost:8080/new.html")
+        // window.open(`file:///home/brennoharten/Estudo/pokedex/new.html?id=${data.id}`, "_self")
+        window.open("http://localhost:8080/0", "_self")
+        console.log(newTitle)
     })
     detailCell.appendChild(detailButton);
 }
