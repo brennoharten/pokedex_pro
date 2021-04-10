@@ -1,0 +1,21 @@
+#header {
+    background-color: rgb(220, 216, 216);
+    border-radius: 5px;
+}
+
+#back-default {
+    width: 85%;
+    height: 85%;
+}
+#back-shiny {
+    width: 85%;
+    height: 85%;
+}
+#front-default {
+    width: 85%;
+    height: 85%;
+}
+#front-shiny {
+    width: 85%;
+    height: 85%;
+}

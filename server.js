@@ -3,7 +3,8 @@ const expressLayouts = require('express-ejs-layouts')
 //const faker = require('faker')
 
 const app = express()
-const id = 0
+const port = 8080
+
 app.set('view engine', 'ejs')
 app.use(expressLayouts)
 app.use(express.urlencoded({extended: true}))
@@ -14,10 +15,10 @@ app.get("/", function(req,res){
     res.render('home')
 })
 
-app.get(`/${id}`, function(req,res){
+app.get("/new", function(req,res){
     res.render('new')
 })
 
-app.listen(8080, function(){
-    console.log("Server is running at localhost:8080")
+app.listen(port, function(){
+    console.log(`Server is running at localhost:${port}`)
 })

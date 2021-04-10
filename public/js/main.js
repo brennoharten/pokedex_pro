@@ -78,7 +78,7 @@ function fillTable(data) {
         .then(function(result) {
             return result.json()
         })
-        .then(async function(data){
+        .then(function(data){
             
             let pokemonInfo = {id:data.id, name:data.name, weight:data.weight}
             pokemonList[data.id-1] = pokemonInfo     
@@ -121,7 +121,7 @@ function insertNewRow(data) {
     detailButton.innerHTML = "Detalhes"
     detailButton.addEventListener("click", function(event){
         // window.open(`file:///home/brennoharten/Estudo/pokedex/new.html?id=${data.id}`, "_self")
-        window.open("http://localhost:8080/0", "_self")
+        window.open(`http://localhost:8080/new/?id=${data.id}`, "_self")
         console.log(newTitle)
     })
     detailCell.appendChild(detailButton);
