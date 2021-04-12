@@ -23,6 +23,7 @@ navPrevious.addEventListener("click", function(event){
         getPokemonList(previousURL).then(function(data){
             clearTable()
             fillTable(data)
+
             
         })
     }
@@ -82,19 +83,25 @@ function fillTable(data) {
             
             let pokemonInfo = {id:data.id, name:data.name, weight:data.weight}
             pokemonList[data.id-1] = pokemonInfo     
-            insertNewRow(data)
+            // insertNewRow(data)
         }) 
         
 
     })
+
+    completeList()
 }
 
-console.log("qualquer cois")
+function complete() {
+    pokemonList.forEach(function(element, index){
+        insertNewRow(element)
+    })
+    pokemonList = []
+}
 
-// for (var i = 0; i < 20; i++) {
-//     console.log(i)
-//     insertNewRow(pokemonList[i])
-// }
+function completeList(){
+    setTimeout(complete, 1000)
+}
 
 
 
